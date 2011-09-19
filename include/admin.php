@@ -30,6 +30,7 @@ function gb_sk_register_settings() {
     register_setting( GB_SK_CFG_SETTINGS_GROUP, 'gb_sk_settings', 'gb_sk_settings_validate' );
     add_settings_section('gb_sk_section', GB_SK_STR_SETTINGS_SECTION_TITLE, 'gb_sk_settings_description', GB_SK_CFG_SETTINGS_SECTION);
     add_settings_field('gb_sk_show_example_ui', GB_SK_STR_SHOW_EXAMPLE_UI, 'gb_sk_show_example_ui_field', GB_SK_CFG_SETTINGS_SECTION, 'gb_sk_section');
+    add_settings_field('gb_sk_send_mail', GB_SK_STR_SEND_MAIL, 'gb_sk_send_mail_field', GB_SK_CFG_SETTINGS_SECTION, 'gb_sk_section');
 }
 
 /**
@@ -49,6 +50,12 @@ function gb_sk_settings_validate($input) {
         $newinput['show_example_ui'] = 1;
     }
 
+    // Validate send_mail (0 or 1)
+    $newinput['send_mail'] = trim($input['send_mail']);
+    if(!in_array($newinput['send_mail'], array(0, 1))) {
+        $newinput['send_mail'] = 1;
+    }
+
     return $newinput;
 }
 
@@ -63,9 +70,9 @@ function gb_sk_settings_description() {
 }
 
 /**
- * Settings description
+ * 'Show example UI' field
  *
- * This function echoes a little description of the settings panel for the plugin, just after the title.
+ * This function echoes the field for the 'Show example UI' field in the settings form
  *
  */
 function gb_sk_show_example_ui_field() {
@@ -81,6 +88,26 @@ function gb_sk_show_example_ui_field() {
     echo '&nbsp;&nbsp;&nbsp;';
     echo '<label for="gb_sk_show_example_ui_no">'.GB_SK_STR_NO.'&nbsp;</label>';
     echo '<input id="gb_sk_show_example_ui_no" name="gb_sk_settings[show_example_ui]" type="radio" value="0" '.($val ? '':'checked').' />';
+}
+
+/**
+ * 'Send mail' field
+ *
+ * This function echoes the field for the 'Send mail' field in the settings form
+ *
+ */
+function gb_sk_send_mail_field() {
+    // Retrieve options
+    $options = get_option('gb_sk_settings');
+
+    // Default value = 1
+    $val = !isset($options['send_mail']) || !empty($options['send_mail']) ? 1 : 0;
+
+    // Display field
+    echo '<select name="gb_sk_settings[send_mail]">';
+    echo '<option value="1" '.($val ? 'selected':'').'>'.GB_SK_STR_YES.'</option>';
+    echo '<option value="0" '.($val ? '':'selected').'>'.GB_SK_STR_NO.'</option>';
+    echo '</select>';
 }
 
 /**
@@ -103,7 +130,7 @@ function gb_sk_display_admin_menu() {
     echo '<h2>'.GB_SK_STR_ADMIN_MENU_PAGE_TITLE;
 
     // Cron job manual launch button
-    echo '<form class="gb_sk_cron_button" method="post" action="options.php"><input class="button-primary" type="submit" value="'.GB_SK_STR_CRON_BUTTON.'" name="gb_sk_launch_cron" /></form>';
+    echo '<form class="gb_sk_cron_button" method="post" action=""><input class="button-primary" type="submit" value="'.GB_SK_STR_CRON_BUTTON.'" name="gb_sk_launch_cron" /></form>';
 
     // Title ending
     echo '</h2>';

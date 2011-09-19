@@ -19,7 +19,7 @@ require 'include/config.php';
  */
 if(is_admin()) {
     require 'include/admin.php';
-    
+
     // Handle AJAX requests
     add_action('wp_ajax_gb_sk_ajax', 'gb_sk_ajax');
     add_action('wp_ajax_nopriv_gb_sk_ajax', 'gb_sk_ajax');

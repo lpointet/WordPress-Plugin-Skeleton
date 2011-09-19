@@ -14,9 +14,15 @@ add_action('init', 'gb_sk_add_post_type');
  * @param   bool  $manual     Is this a manual call or not?
  */
 function gb_sk_send_mail($manual = FALSE) {
-    $admin_email = get_bloginfo('admin_email');
-    $message = 'This mail has been '.($manual ? 'manually' : 'automatically').' sent.';
-    $ret = wp_mail($admin_email, 'This is a Cron Job example', $message);
+    // Retrieve plugin options to check if we have to show ui or not
+    $options = get_option('gb_sk_settings');
+
+    // Default value = TRUE
+    if(!isset($options['send_mail']) || !empty($options['send_mail'])) {
+        $admin_email = get_bloginfo('admin_email');
+        $message = 'This mail has been '.($manual ? 'manually' : 'automatically').' sent.';
+        wp_mail($admin_email, 'This is a Cron Job example', $message);
+    }
 }
 
 /**
