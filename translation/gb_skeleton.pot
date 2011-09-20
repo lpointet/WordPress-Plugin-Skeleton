@@ -1,3 +1,19 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-20 19:08+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Lionel Pointet <lionel.pointet@globalis-ms.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: Z:\\webperso\\veille\\wordpress\\wp-content\\plugins\\gb_skeleton\\include\n"
+"X-Poedit-SearchPath-0: .\n"
+
 #: lang.php:5
 msgid "Yes"
 msgstr ""
@@ -52,5 +68,21 @@ msgstr ""
 
 #: lang.php:26
 msgid "The main settings of Skeleton plugin"
+msgstr ""
+
+#: lang.php:31
+msgid "The most recent Examples on your site"
+msgstr ""
+
+#: lang.php:32
+msgid "Recent examples"
+msgstr ""
+
+#: lang.php:33
+msgid "Title:"
+msgstr ""
+
+#: lang.php:34
+msgid "Number of examples to show:"
 msgstr ""
 

@@ -24,3 +24,11 @@ define('GB_SK_STR_SEND_MAIL', __('Send mail with Cron Job?', GB_SK_DOMAIN));
 define('GB_SK_STR_SETTINGS', __('Settings', GB_SK_DOMAIN));
 define('GB_SK_STR_SETTINGS_SECTION_TITLE', __('Main Skeleton Settings', GB_SK_DOMAIN));
 define('GB_SK_STR_SETTINGS_DESCRIPTION', __('The main settings of Skeleton plugin', GB_SK_DOMAIN));
+
+/**
+ * Widgets
+ */
+define('GB_SK_STR_EXAMPLE_WIDGET_DESCRIPTION', __('The most recent Examples on your site', GB_SK_DOMAIN));
+define('GB_SK_STR_EXAMPLE_WIDGET_TITLE', __('Recent examples', GB_SK_DOMAIN));
+define('GB_SK_STR_EXAMPLE_WIDGET_LBL_TITLE', __('Title:', GB_SK_DOMAIN));
+define('GB_SK_STR_EXAMPLE_WIDGET_LBL_NUMBER_TO_SHOW', __('Number of examples to show:', GB_SK_DOMAIN));

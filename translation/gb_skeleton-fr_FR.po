@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Plugin Skeleton\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 17:15+0100\n"
-"PO-Revision-Date: 2011-09-20 17:15+0100\n"
+"POT-Creation-Date: 2011-09-20 19:06+0100\n"
+"PO-Revision-Date: 2011-09-20 19:07+0100\n"
 "Last-Translator: Lionel Pointet <lionel.pointet@globalis-ms.com>\n"
 "Language-Team: GLOBALIS media systems <lionel.pointet@globalis-ms.com>\n"
 "MIME-Version: 1.0\n"
@@ -72,4 +72,20 @@ msgstr "Principales options du squelette"
 #: lang.php:26
 msgid "The main settings of Skeleton plugin"
 msgstr "Les options principales du plugin Squelette"
+
+#: lang.php:31
+msgid "The most recent Examples on your site"
+msgstr "Les Exemples les plus récents sur votre site"
+
+#: lang.php:32
+msgid "Recent examples"
+msgstr "Exemples récents"
+
+#: lang.php:33
+msgid "Title:"
+msgstr "Titre :"
+
+#: lang.php:34
+msgid "Number of examples to show:"
+msgstr "Nombre d'exemples à afficher :"
 
