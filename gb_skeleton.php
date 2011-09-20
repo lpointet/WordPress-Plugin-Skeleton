@@ -15,6 +15,11 @@ License: GPL2
 require 'include/config.php';
 
 /**
+ * Load translation module (before lang.php inclusion)
+ */
+load_plugin_textdomain(GB_SK_DOMAIN, FALSE, GB_SK_PATH . '/translation' );
+
+/**
  * On the admin pages, we need the admin library, on front, we need front one
  */
 if(is_admin()) {
@@ -33,11 +38,6 @@ else {
  */
 require 'include/lib.php';
 require 'include/lang.php';
-
-/**
- * Load translation module
- */
-load_plugin_textdomain(GB_SK_DOMAIN, FALSE, GB_SK_COMPLETE_PATH . '/translation' );
 
 /**
  * Function called at plugin activation
