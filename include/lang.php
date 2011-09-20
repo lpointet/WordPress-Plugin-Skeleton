@@ -21,5 +21,6 @@ define('GB_SK_STR_CRON_BUTTON', __('Launch manual cron', GB_SK_DOMAIN));
 define('GB_SK_STR_SAVE_CHANGES', __('Save Changes', GB_SK_DOMAIN));
 define('GB_SK_STR_SHOW_EXAMPLE_UI', __('Show example UI?', GB_SK_DOMAIN));
 define('GB_SK_STR_SEND_MAIL', __('Send mail with Cron Job?', GB_SK_DOMAIN));
+define('GB_SK_STR_SETTINGS', __('Settings', GB_SK_DOMAIN));
 define('GB_SK_STR_SETTINGS_SECTION_TITLE', __('Main Skeleton Settings', GB_SK_DOMAIN));
 define('GB_SK_STR_SETTINGS_DESCRIPTION', __('The main settings of Skeleton plugin', GB_SK_DOMAIN));

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Plugin Skeleton\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 16:20+0100\n"
-"PO-Revision-Date: 2011-09-20 16:40+0100\n"
+"POT-Creation-Date: 2011-09-20 17:15+0100\n"
+"PO-Revision-Date: 2011-09-20 17:15+0100\n"
 "Last-Translator: Lionel Pointet <lionel.pointet@globalis-ms.com>\n"
 "Language-Team: GLOBALIS media systems <lionel.pointet@globalis-ms.com>\n"
 "MIME-Version: 1.0\n"
@@ -62,10 +62,14 @@ msgid "Send mail with Cron Job?"
 msgstr "Envoyer le mail avec la tâche planifiée ?"
 
 #: lang.php:24
+msgid "Settings"
+msgstr "Options"
+
+#: lang.php:25
 msgid "Main Skeleton Settings"
 msgstr "Principales options du squelette"
 
-#: lang.php:25
+#: lang.php:26
 msgid "The main settings of Skeleton plugin"
 msgstr "Les options principales du plugin Squelette"
 

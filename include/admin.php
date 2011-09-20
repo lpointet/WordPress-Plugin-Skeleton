@@ -12,12 +12,16 @@ add_action('admin_init', 'gb_sk_register_settings');
  *
  */
 function gb_sk_add_admin_menu() {
+    // Setup the settings page
     $mypage = add_options_page(GB_SK_STR_ADMIN_MENU_PAGE_TITLE, GB_SK_STR_ADMIN_MENU_TITLE, 'manage_options', 'gb_sk_admin_menu', 'gb_sk_display_admin_menu');
 
     // Add some scripts on this admin panel
     add_action('admin_print_scripts-'.$mypage, 'gb_sk_admin_menu_script' );
     // Add some style to this admin panel
     add_action('admin_print_styles-'.$mypage, 'gb_sk_admin_menu_style' );
+
+    // Add a link to settings page in plugins list
+    add_filter('plugin_action_links', 'gb_sk_add_settings_link', 10, 2);
 }
 
 /**
@@ -154,7 +158,7 @@ function gb_sk_display_admin_menu() {
     echo '<p class="submit">
     <input type="submit" class="button-primary" value="'.GB_SK_STR_SAVE_CHANGES.'" />
     </p>';
-    
+
     echo '</form>'; // Global form end
 
     echo '</div>'; // .wrap
@@ -178,4 +182,24 @@ function gb_sk_admin_menu_style() {
  */
 function gb_sk_admin_menu_script() {
     // wp_enqueue_script('gb_sk_admin_menu_script', GB_SK_URL.'/js/admin.js');
+}
+
+/**
+ * Adds a link to settings page
+ *
+ * This function adds a link in the plugins page of WordPress, near the 'deactivate' link, pointing to our settings page
+ *
+ */
+function gb_sk_add_settings_link($links, $file) {
+    // Retrieve the folder only (we don't need the php file)
+    $file = explode('/', $file);
+    $file = $file[0];
+
+    // Check if it's ours, and add our link
+    if( $file == GB_SK_PATH ) {
+        $settings_link = '<a href="options-general.php?page=gb_sk_admin_menu">'.GB_SK_STR_SETTINGS.'</a>';
+        array_unshift( $links, $settings_link ); // before other links
+    }
+
+    return $links;
 }
