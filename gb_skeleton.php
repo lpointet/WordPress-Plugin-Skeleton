@@ -34,10 +34,11 @@ else {
 }
 
 /**
- * On admin or front, we need the global library and the lang file
+ * On admin or front, we need the global library, the lang file and widgets declaration
  */
-require 'include/lib.php';
 require 'include/lang.php';
+require 'include/lib.php';
+require 'include/widget.php';
 
 /**
  * Function called at plugin activation
