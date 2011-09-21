@@ -20,25 +20,21 @@ require 'include/config.php';
 load_plugin_textdomain(GB_SK_DOMAIN, FALSE, GB_SK_PATH . '/translation' );
 
 /**
- * On the admin pages, we need the admin library, on front, we need front one
- */
-if(is_admin()) {
-    require 'include/admin.php';
-
-    // Handle AJAX requests
-    add_action('wp_ajax_gb_sk_ajax', 'gb_sk_ajax');
-    add_action('wp_ajax_nopriv_gb_sk_ajax', 'gb_sk_ajax');
-}
-else {
-    require 'include/front.php';
-}
-
-/**
  * On admin or front, we need the global library, the lang file and widgets declaration
  */
 require 'include/lang.php';
 require 'include/lib.php';
 require 'include/widget.php';
+
+/**
+ * On the admin pages, we need the admin library, on front, we need front one
+ */
+if(is_admin()) {
+    require 'include/admin.php';
+}
+else {
+    require 'include/front.php';
+}
 
 /**
  * Function called at plugin activation
