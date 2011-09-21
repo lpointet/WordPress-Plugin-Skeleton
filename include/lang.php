@@ -32,3 +32,11 @@ define('GB_SK_STR_EXAMPLE_WIDGET_DESCRIPTION', __('The most recent Examples on y
 define('GB_SK_STR_EXAMPLE_WIDGET_TITLE', __('Recent examples', GB_SK_DOMAIN));
 define('GB_SK_STR_EXAMPLE_WIDGET_LBL_TITLE', __('Title:', GB_SK_DOMAIN));
 define('GB_SK_STR_EXAMPLE_WIDGET_LBL_NUMBER_TO_SHOW', __('Number of examples to show:', GB_SK_DOMAIN));
+
+/**
+ * Shortcodes
+ */
+define('GB_SK_STR_SHORTCODE', __('This is a shortcode example %d', GB_SK_DOMAIN));
+define('GB_SK_STR_SHORTCODE_PROMPT', __('Please enter the num', GB_SK_DOMAIN));
+define('GB_SK_STR_SHORTCODE_BUTTON_TITLE', __('Example shortcode', GB_SK_DOMAIN));
+define('GB_SK_STR_SHORTCODE_DESCRIPTION', __('Example shortcode plugin', GB_SK_DOMAIN));

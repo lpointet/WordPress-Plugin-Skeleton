@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Plugin Skeleton\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 19:06+0100\n"
-"PO-Revision-Date: 2011-09-20 19:07+0100\n"
+"POT-Creation-Date: 2011-09-21 15:24+0100\n"
+"PO-Revision-Date: 2011-09-21 15:25+0100\n"
 "Last-Translator: Lionel Pointet <lionel.pointet@globalis-ms.com>\n"
 "Language-Team: GLOBALIS media systems <lionel.pointet@globalis-ms.com>\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-Basepath: Z:\\webperso\\veille\\wordpress\\wp-content\\plugins\\gb_skeleton\\include\\\n"
-"Plural-Forms: nplurals=2;plural=n>2\n"
+"Plural-Forms: nplurals=2;plural=n>1\n"
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -88,4 +88,21 @@ msgstr "Titre :"
 #: lang.php:34
 msgid "Number of examples to show:"
 msgstr "Nombre d'exemples à afficher :"
+
+#: lang.php:39
+#, php-format
+msgid "This is a shortcode example %d"
+msgstr "C'est un exemple de shortcode %d"
+
+#: lang.php:40
+msgid "Please enter the num"
+msgstr "Entrez le numéro svp"
+
+#: lang.php:41
+msgid "Example shortcode"
+msgstr "Exemple de shortcode"
+
+#: lang.php:42
+msgid "Example shortcode plugin"
+msgstr "Plugin d'exemple de shortcode"
 
