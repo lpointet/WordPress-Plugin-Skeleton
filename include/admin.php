@@ -6,6 +6,12 @@ add_action('admin_menu', 'gb_sk_add_admin_menu');
 add_action('admin_init', 'gb_sk_register_settings');
 add_action('init', 'gb_sk_add_shortcode_button');
 
+// Handle AJAX requests, even for front ones
+add_action('wp_ajax_gb_sk_ajax', 'gb_sk_ajax');
+add_action('wp_ajax_nopriv_gb_sk_ajax', 'gb_sk_ajax');
+
+add_action('admin_print_scripts', 'gb_sk_add_ajax_script'); // Include JS file to do ajax calls on admin (same function called from front.php)
+
 /**
  * Menu manager function
  *
@@ -261,4 +267,22 @@ function gb_sk_shortcode_localization() {
     return array(
         'gb_sk_shortcode' => GB_SK_COMPLETE_PATH.'/include/localize_tinymce.php',
     );
+}
+
+/**
+ * Ajax response
+ *
+ * This function returns a little text at each ajax call
+ *
+ */
+function gb_sk_ajax() {
+    // Check to see if the submitted nonce matches with the generated nonce we created earlier (see lib.php)
+    if ( ! wp_verify_nonce( $_REQUEST['nonce'], 'gb_sk_ajax_nonce' ) )
+        die('Busted!');
+
+    // Return a randomized string
+    echo GB_SK_STR_AJAX.' '.mt_rand();
+
+    // We MUST exit
+    exit;
 }

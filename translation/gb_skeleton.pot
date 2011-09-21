@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-21 15:24+0100\n"
+"POT-Creation-Date: 2011-09-21 16:52+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Lionel Pointet <lionel.pointet@globalis-ms.com>\n"
 "Language-Team: \n"
@@ -101,5 +101,9 @@ msgstr ""
 
 #: lang.php:42
 msgid "Example shortcode plugin"
+msgstr ""
+
+#: lang.php:47
+msgid "An ajax call has been made!"
 msgstr ""
 

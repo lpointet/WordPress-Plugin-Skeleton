@@ -40,3 +40,8 @@ define('GB_SK_STR_SHORTCODE', __('This is a shortcode example %d', GB_SK_DOMAIN)
 define('GB_SK_STR_SHORTCODE_PROMPT', __('Please enter the num', GB_SK_DOMAIN));
 define('GB_SK_STR_SHORTCODE_BUTTON_TITLE', __('Example shortcode', GB_SK_DOMAIN));
 define('GB_SK_STR_SHORTCODE_DESCRIPTION', __('Example shortcode plugin', GB_SK_DOMAIN));
+
+/**
+ * AJAX
+ */
+define('GB_SK_STR_AJAX', __('An ajax call has been made!', GB_SK_DOMAIN));

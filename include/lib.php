@@ -59,3 +59,23 @@ function gb_sk_add_post_type() {
         ),
     ));
 }
+
+/**
+ * Adding JS for ajax
+ *
+ * This function adds some JS files to do AJAX calls from admin or front
+ *
+ */
+function gb_sk_add_ajax_script() {
+    // Embed the javascript file that makes the AJAX request
+    wp_enqueue_script( 'gb_sk_ajax', GB_SK_URL . '/js/ajax.js', array( 'jquery' ) );
+
+    wp_localize_script( 'gb_sk_ajax', 'GB_SK_AJAX', array(
+        // URL to wp-admin/admin-ajax.php to process the request
+        'ajaxurl'          => admin_url( 'admin-ajax.php' ),
+
+        // generate a nonce with a unique ID "gb_sk_ajax_nonce"
+        // so that you can check it later when an AJAX request is sent
+        'nonce' => wp_create_nonce( 'gb_sk_ajax_nonce' ),
+    ));
+}

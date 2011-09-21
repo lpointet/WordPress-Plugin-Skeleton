@@ -1,5 +1,10 @@
 <?php
 /**
+ * Add hooks declarations
+ */
+add_action('wp_print_scripts', 'gb_sk_add_ajax_script'); // Include JS file to do ajax calls on admin (same function called from front.php)
+
+/**
  * Add some shortcodes
  */
 add_shortcode('skeleton', 'gb_sk_shortcode');
