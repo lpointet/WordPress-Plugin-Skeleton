@@ -4,6 +4,7 @@
  */
 add_action('admin_menu', 'gb_sk_add_admin_menu');
 add_action('admin_init', 'gb_sk_register_settings');
+add_action('init', 'gb_sk_add_shortcode_button');
 
 /**
  * Menu manager function
@@ -202,4 +203,62 @@ function gb_sk_add_settings_link($links, $file) {
     }
 
     return $links;
+}
+
+/**
+ * Attach shortcode button
+ *
+ * @return boolean
+ */
+function gb_sk_add_shortcode_button() {
+    // Only for users with rights
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages')) {
+        return FALSE;
+    }
+
+    // Has user WYSIWYG enabled?
+    if (get_user_option('rich_editing')) {
+        add_filter('mce_external_plugins', 'gb_sk_attach_button_script');
+        add_filter('mce_buttons', 'gb_sk_register_button');
+
+        // We need some strings in the JS, localize it!
+        add_filter('mce_external_languages', 'gb_sk_shortcode_localization');
+
+        return TRUE;
+    }
+}
+
+/**
+ * Adds shortcode button js
+ *
+ * @param array $plugin_array
+ * @return array
+ */
+function gb_sk_attach_button_script($plugin_array) {
+    $plugin_array['gb_sk_shortcode'] = GB_SK_URL.'/js/shortcode.js';
+
+    return $plugin_array;
+}
+
+/**
+ * Register shortcodes buttons
+ *
+ * @param array $buttons
+ * @return array
+ */
+function gb_sk_register_button($buttons) {
+    array_push($buttons, '|', 'gb_sk_shortcode');
+
+    return $buttons;
+}
+
+/**
+ * Set localization file for shortcode tinymce plugin
+ *
+ * @return array
+ */
+function gb_sk_shortcode_localization() {
+    return array(
+        'gb_sk_shortcode' => GB_SK_COMPLETE_PATH.'/include/localize_tinymce.php',
+    );
 }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 19:08+0100\n"
+"POT-Creation-Date: 2011-09-21 15:24+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Lionel Pointet <lionel.pointet@globalis-ms.com>\n"
 "Language-Team: \n"
@@ -84,5 +84,22 @@ msgstr ""
 
 #: lang.php:34
 msgid "Number of examples to show:"
+msgstr ""
+
+#: lang.php:39
+#, php-format
+msgid "This is a shortcode example %d"
+msgstr ""
+
+#: lang.php:40
+msgid "Please enter the num"
+msgstr ""
+
+#: lang.php:41
+msgid "Example shortcode"
+msgstr ""
+
+#: lang.php:42
+msgid "Example shortcode plugin"
 msgstr ""
 
