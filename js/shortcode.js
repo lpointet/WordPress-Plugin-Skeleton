@@ -1,7 +1,6 @@
 (function() {
     tinymce.create("tinymce.plugins.gb_sk_shortcode", {
         init : function(ed, url) {
-            console.log(url);
             // Shortcode insertion
             ed.addCommand('gb_sk_shortcode_insert', function() {
                 var insert_num = prompt(ed.getLang('gb_sk_shortcode.num_prompt'), '');
