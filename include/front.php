@@ -12,9 +12,9 @@ add_shortcode('skeleton', 'gb_sk_shortcode');
 /**
  * Converts shortcode to text
  *
- * @param array $atts
- * @param string $content
- * @return string
+ * @param array  $atts     Shortcode attributes ('num' in this case)
+ * @param string $content  Shortcode content for enclosed ones (always '' in this case)
+ * @return string          Replacement string for our shortcode
  */
 function gb_sk_shortcode($atts, $content = null) {
     // This shortcode takes an attribute : "num"
