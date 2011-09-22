@@ -38,8 +38,14 @@ function gb_sk_add_admin_menu() {
  *
  */
 function gb_sk_register_settings() {
+    // We need a group, with the option name and data validation function (so that WordPress can automatically save our option)
     register_setting( GB_SK_CFG_SETTINGS_GROUP, 'gb_sk_settings', 'gb_sk_settings_validate' );
+    // We need a section (regroupment of fields) with an id, a title, a description displaying function and a name of page on which it will be shown
     add_settings_section('gb_sk_section', GB_SK_STR_SETTINGS_SECTION_TITLE, 'gb_sk_settings_description', GB_SK_CFG_SETTINGS_SECTION);
+
+    // We can now add our different fields
+    // in the section we created earlier.
+    // We pass an id, a label, a callback to display input (or other form element needed), the section page and section id
     add_settings_field('gb_sk_show_example_ui', GB_SK_STR_SHOW_EXAMPLE_UI, 'gb_sk_show_example_ui_field', GB_SK_CFG_SETTINGS_SECTION, 'gb_sk_section');
     add_settings_field('gb_sk_send_mail', GB_SK_STR_SEND_MAIL, 'gb_sk_send_mail_field', GB_SK_CFG_SETTINGS_SECTION, 'gb_sk_section');
 }
@@ -50,6 +56,8 @@ function gb_sk_register_settings() {
  * This function validates the options posted before saving them :
  * show_example_ui must be either 0 or 1
  *
+ * @param   array  $input    The options posted by the user
+ * @return  array  $newinput The options to save in DB
  */
 function gb_sk_settings_validate($input) {
     // Retrieve current options
@@ -157,8 +165,9 @@ function gb_sk_display_admin_menu() {
     // Global form
     echo '<form method="post" action="options.php">';
 
-    // Display registered settings fields
+    // Needed to display security hidden fields (_wp_nonce, referer etc.)
     settings_fields( GB_SK_CFG_SETTINGS_GROUP );
+    // Display registered settings fields
     do_settings_sections( GB_SK_CFG_SETTINGS_SECTION );
 
     // Submit button
@@ -196,6 +205,9 @@ function gb_sk_admin_menu_script() {
  *
  * This function adds a link in the plugins page of WordPress, near the 'deactivate' link, pointing to our settings page
  *
+ * @param  array  $links The current links that will be displayed for this plugin
+ * @param  string $file  The current plugin file name (bootstrap)
+ * @return array  $links The links to display, potentially with new ones
  */
 function gb_sk_add_settings_link($links, $file) {
     // Retrieve the folder only (we don't need the php file)
@@ -237,8 +249,8 @@ function gb_sk_add_shortcode_button() {
 /**
  * Adds shortcode button js
  *
- * @param array $plugin_array
- * @return array
+ * @param  array $plugin_array The existing tinyMCE plugins
+ * @return array $plugin_array The plugins array, with ours
  */
 function gb_sk_attach_button_script($plugin_array) {
     $plugin_array['gb_sk_shortcode'] = GB_SK_URL.'/js/shortcode.js';
@@ -249,8 +261,8 @@ function gb_sk_attach_button_script($plugin_array) {
 /**
  * Register shortcodes buttons
  *
- * @param array $buttons
- * @return array
+ * @param  array $buttons The existing tinyMCE buttons
+ * @return array $buttons The buttons array, with ours
  */
 function gb_sk_register_button($buttons) {
     array_push($buttons, '|', 'gb_sk_shortcode');
@@ -261,7 +273,7 @@ function gb_sk_register_button($buttons) {
 /**
  * Set localization file for shortcode tinymce plugin
  *
- * @return array
+ * @return array          The path for language PHP file of our tinyMCE plugin
  */
 function gb_sk_shortcode_localization() {
     return array(

@@ -58,6 +58,8 @@ function gb_sk_add_post_type() {
             'slug' => 'family',
         ),
     ));
+    // We can apply existing taxonomy to an existing post type : tags apply to Examples
+    register_taxonomy_for_object_type('post_tag', GB_SK_CFG_EXAMPLE_POST_TYPE);
 }
 
 /**
