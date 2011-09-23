@@ -5,7 +5,7 @@ You can still install it on a WordPress powered site, it won't break anything an
 ## Functionnalities
 This plugin provides sample code for these functionnalities of WordPress plugins:
 
-* table(s) creation in database
+* table(s) creation in database at activation
 * cron job scheduling with manual activation in admin panel
 * localization (currently French and English are supported, but it's only an example)
 * custom post type creation
