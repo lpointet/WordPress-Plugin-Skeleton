@@ -43,8 +43,10 @@ else {
  *
  */
 function gb_sk_activate() {
+    global $wpdb;
+
     // Here we create a new table for our plugin
-    $sql = "CREATE TABLE " . GB_SK_CFG_TABLE_EXAMPLE . " (
+    $sql = "CREATE TABLE " . $wpdb->prefix . GB_SK_CFG_TABLE_EXAMPLE . " (
 	  id mediumint(9) NOT NULL AUTO_INCREMENT,
 	  time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 	  name tinytext NOT NULL,
