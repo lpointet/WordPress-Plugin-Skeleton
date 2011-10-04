@@ -3,7 +3,7 @@
 Plugin Name: Skeleton Plugin
 Plugin URI: http://www.globalis-ms.com
 Description: This plugin intends to be a development basis for a WordPress plugin, including most of best practices and functionnalities of WordPress plugins
-Version: 1.0.0
+Version: 1.0.1
 Author: Lionel POINTET, GLOBALIS media systems
 Author URI: http://www.globalis-ms.com
 License: GPL2
