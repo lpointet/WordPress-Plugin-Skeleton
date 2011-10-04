@@ -3,7 +3,7 @@
 Plugin Name: Skeleton Plugin
 Plugin URI: http://www.globalis-ms.com
 Description: This plugin intends to be a development basis for a WordPress plugin, including most of best practices and functionnalities of WordPress plugins
-Version: 1.0.0
+Version: 1.0.1
 Author: Lionel POINTET, GLOBALIS media systems
 Author URI: http://www.globalis-ms.com
 License: GPL2
@@ -43,8 +43,10 @@ else {
  *
  */
 function gb_sk_activate() {
+    global $wpdb;
+
     // Here we create a new table for our plugin
-    $sql = "CREATE TABLE " . GB_SK_CFG_TABLE_EXAMPLE . " (
+    $sql = "CREATE TABLE " . $wpdb->prefix . GB_SK_CFG_TABLE_EXAMPLE . " (
 	  id mediumint(9) NOT NULL AUTO_INCREMENT,
 	  time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 	  name tinytext NOT NULL,
